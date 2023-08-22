@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    <script defer src="./index.js"></script>
+</head>
+<body>
+    <!-- 1 inline js
+        <button onClick="hello()">Click<\button>
+            on click ya is type ki chijo ko krne ke liye ham inline js ka use krte hai
+    2 internal js
+    <script> js code will be here<\script>
+    3 external j
+      <script src="./index.js"> <\script>-->
+    
+
+        <!-- there are two type of event -->
+        <!--  1 Mouse event -->
+        <!-- 
+            hover
+            mouseIn
+            mouseOut
+            mouseEnter
+            mouseLeave
+         -->
+         <!-- 2 ketboard Event -->
+         <!-- 
+            keyPress
+            keyUp
+            keyDown
+
+            some basic event
+
+            onClick
+            onHover
+            onLoad
+            onChange
+            ondblClick
+          -->
+
+          <!-- <button onclick="hello()">Click me !!!</button> -->
+          <!-- <button ondblclick="hello()">Click me !!!</button> -->
+          <!-- <button onmouseover="hello()">Click me !!!</button> -->
+          <!-- <button onmouseleave="hello()">Click me !!!</button> -->
+          <!-- <button onload="hello()">Click me !!!</button> -->
+          <!-- <button>Click me !!!</button>
+          <input onchange="hello(event)" type="text">
+
+          <script>
+            function hello(e) {
+              console.log(e.target.value);
+            }
+          </script> -->
+
+          <!-- NOW LETS MAKE A FORM -->
+          <label for="name">name</label>
+          <input onchange="name1(event)" type="text">
+          <br>
+          <label for="phno">ph no</label>
+          <input onchange="number(event)" type="number">
+          <br>
+          <label for="email">E-mail</label>
+          <input onchange="email(event)" type="email">
+          <br>
+          <label for="password">password</label>
+          <input onchange="password(event)" type="password" name="" id="">
+          <br>
+          
+          <input type="submit" onclick="submitDetails()"></input>
+          <a href="./page2.html">
+            <button onclick="submitDetails()">Next Page</button>
+          </a>
+          
+          
+          <script>
+            const details ={
+              name:"",
+              phno:"",
+              email:"",
+              password:"",
+              fruits:""
+              
+            }
+            function name1(e) {
+              details.name = e.target.value 
+              // console.log(details);
+            }
+            function number(e) {
+              details.phno = e.target.value 
+              // console.log(details);
+            }
+            function email(e) {
+              details.email = e.target.value 
+              // console.log(details);
+            }
+            function password(e) {
+              details.password = e.target.value 
+              // console.log(details);
+            }
+            
+            function submitDetails() {
+              localStorage.setItem("Userdetails", JSON.stringify(details))
+              console.log(details);
+              
+            }
+          </script>
+</body>
+</html>
